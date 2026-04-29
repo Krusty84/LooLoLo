@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LooLoLo Location Report - test.py</title>
+  <style>
+    :root {
+      --bg: #f6f7f2;
+      --panel: #ffffff;
+      --ink: #17201b;
+      --muted: #5a665f;
+      --line: #d9ded6;
+      --ok: #137a3f;
+      --lost: #b42318;
+      --degraded: #946200;
+      --generated: #315f8c;
+      --code: #102018;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 14px/1.45 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    header {
+      padding: 28px 32px 20px;
+      border-bottom: 1px solid var(--line);
+      background: #eef1ea;
+    }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    h2 { margin: 28px 0 12px; font-size: 18px; }
+    main { padding: 0 32px 40px; }
+    code {
+      color: var(--code);
+      font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      white-space: pre-wrap;
+    }
+    .meta, .note { color: var(--muted); margin: 4px 0; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      margin: 20px 0 8px;
+    }
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 12px;
+    }
+    .metric strong { display: block; font-size: 20px; margin-bottom: 2px; }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 6px;
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 1200px; }
+    th, td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      background: #e7ebe3;
+      z-index: 1;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .badge {
+      display: inline-block;
+      min-width: 72px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+      font-size: 12px;
+    }
+    .ok { background: var(--ok); }
+    .lost { background: var(--lost); }
+    .degraded { background: var(--degraded); }
+    .generated { background: var(--generated); }
+    ul { padding-left: 20px; }
+    li { margin: 7px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LooLoLo Operation Location Report</h1>
+    <p class="meta">Source: /Users/doykin/_DEV_/LooLoLo/demo/test.py</p>
+    <p class="meta">MLIR source path: /workspace/tests/test.py</p>
+    <p class="meta">Stage order inferred from source-location richness; pass attribution is approximate.</p>
+  </header>
+  <main>
+    <section class="summary">
+      <div class="metric"><strong>14</strong>Total original lines analyzed</div>
+      <div class="metric"><strong>6</strong>Lines fully preserved until the end</div>
+      <div class="metric"><strong>6</strong>Lines present in final stage</div>
+      <div class="metric"><strong>6</strong>Lines completely lost</div>
+      <div class="metric"><strong>1</strong>Generated/unanchored unknown ops</div>
+      <div class="metric"><strong>50.00%</strong>Average preservation rate</div>
+      <div class="metric"><strong>42.86%</strong>Final-stage preservation rate</div>
+    </section>
+    
+    <p class="note">Only inferred lowered source scope lines were analyzed.</p>
+
+    <h2>Operation Table</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Original Line</th>
+            <th>AST Cols</th>
+            <th>Function</th>
+            <th>MLIR Op</th>
+            <th>Stage</th>
+            <th>Status</th>
+            <th>Source Loc</th>
+            <th>Fingerprint</th>
+            <th>MLIR Line</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>6: def add_kernel(</code></td><td>0</td><td>add_kernel</td><td><code>tt.func</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:6:0</td><td><code>57f214467fb8</code></td><td><code>7:   tt.func public @add_kernel(%x_ptr: !tt.ptr&lt;f32&gt; {tt.divisibility = 16 : i32} loc(&quot;x_ptr&quot;(#loc)), %y_ptr: !tt.ptr&lt;f32&gt; {tt.divisibility = 16 : i32} loc(&quot;y_ptr&quot;(#loc)), %output_ptr: !tt.ptr&lt;f32&gt; {tt.divisibility = 16 : i32} loc(&quot;output_ptr&quot;(#loc)), %n_elements: i32 loc(&quot;n_elements&quot;(#loc))) attributes {noinline = false} {</code></td></tr><tr><td><code>6: def add_kernel(</code></td><td>0</td><td>add_kernel</td><td><code>func.func</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:6:0</td><td><code>391c20b5ed05</code></td><td><code>7:   func.func @add_kernel(%arg0: memref&lt;?xi8&gt; loc(&quot;/workspace/tests/test.py&quot;:6:0), %arg1: memref&lt;?xi8&gt; loc(&quot;/workspace/tests/test.py&quot;:6:0), %x_ptr: memref&lt;?xf32&gt; {tt.divisibility = 16 : i32, tt.tensor_kind = 0 : i32} loc(&quot;x_ptr&quot;(#loc)), %y_ptr: memref&lt;?xf32&gt; {tt.divisibility = 16 : i32, tt.tensor_kind = 0 : i32} loc(&quot;y_ptr&quot;(#loc)), %output_ptr: memref&lt;?xf32&gt; {tt.divisibility = 16 : i32, tt.tensor_kind = 1 : i32} loc(&quot;output_ptr&quot;(#loc)), %n_elements: i32 loc(&quot;n_elements&quot;(#loc)), %arg6: i32 loc(&quot;/workspace/tests/test.py&quot;:6:0), %arg7: i32 loc(&quot;/workspace/tests/test.py&quot;:6:0), %arg8: i32 loc(&quot;/workspace/tests/test.py&quot;:6:0), %arg9: i32 loc(&quot;/workspace/tests/test.py&quot;:6:0), %arg10: i32 loc(&quot;/workspace/tests/test.py&quot;:6:0), %arg11: i32 loc(&quot;/workspace/tests/test.py&quot;:6:0)) attributes {SyncBlockLockArgIdx = 0 : i64, WorkspaceArgIdx = 1 : i64, global_kernel = &quot;local&quot;, mix_mode = &quot;aiv&quot;, parallel_mode = &quot;simd&quot;} {</code></td></tr><tr><td><code>6: def add_kernel(</code></td><td>0</td><td>add_kernel</td><td><code>return</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:6:0</td><td><code>2da953f196b4</code></td><td><code>22:     return loc(#loc)</code></td></tr><tr><td><code>7:     x_ptr,</code></td><td>4</td><td>add_kernel</td><td>-</td><td>kernel.ttir.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>7:     x_ptr,</code></td><td>4</td><td>add_kernel</td><td>-</td><td>kernel.ttadapter.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>8:     y_ptr,</code></td><td>4</td><td>add_kernel</td><td>-</td><td>kernel.ttir.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>8:     y_ptr,</code></td><td>4</td><td>add_kernel</td><td>-</td><td>kernel.ttadapter.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>9:     output_ptr,</code></td><td>4</td><td>add_kernel</td><td>-</td><td>kernel.ttir.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>9:     output_ptr,</code></td><td>4</td><td>add_kernel</td><td>-</td><td>kernel.ttadapter.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>10:     n_elements,</code></td><td>4</td><td>add_kernel</td><td>-</td><td>kernel.ttir.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>10:     n_elements,</code></td><td>4</td><td>add_kernel</td><td>-</td><td>kernel.ttadapter.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>11:     BLOCK_SIZE: tl.constexpr</code></td><td>4,16</td><td>add_kernel</td><td>-</td><td>kernel.ttir.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>11:     BLOCK_SIZE: tl.constexpr</code></td><td>4,16</td><td>add_kernel</td><td>-</td><td>kernel.ttadapter.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>12: ):</code></td><td>-</td><td>add_kernel</td><td>-</td><td>kernel.ttir.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>12: ):</code></td><td>-</td><td>add_kernel</td><td>-</td><td>kernel.ttadapter.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>13:     pid = tl.program_id(axis = 0)</code></td><td>4,10,24,31</td><td>add_kernel</td><td><code>tt.get_program_id</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:13:24</td><td><code>ce61d4664ff6</code></td><td><code>9:     %pid = tt.get_program_id x : i32 loc(#loc18)</code></td></tr><tr><td><code>13:     pid = tl.program_id(axis = 0)</code></td><td>4,10,24,31</td><td>add_kernel</td><td>-</td><td>kernel.ttadapter.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>15:     block_start = pid * BLOCK_SIZE</code></td><td>4,18,24</td><td>add_kernel</td><td><code>arith.muli</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:15:24</td><td><code>064476742b52</code></td><td><code>10:     %block_start = arith.muli %pid, %c128_i32 : i32 loc(#loc19)</code></td></tr><tr><td><code>15:     block_start = pid * BLOCK_SIZE</code></td><td>4,18,24</td><td>add_kernel</td><td><code>arith.constant</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:15:24</td><td><code>9026c78b237d</code></td><td><code>8:     %block_start = arith.constant 128 : i32 loc(#loc13)</code></td></tr><tr><td><code>15:     block_start = pid * BLOCK_SIZE</code></td><td>4,18,24</td><td>add_kernel</td><td><code>arith.muli</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:15:24</td><td><code>064476742b52</code></td><td><code>9:     %block_start_0 = arith.muli %arg9, %block_start : i32 loc(#loc13)</code></td></tr><tr><td><code>15:     block_start = pid * BLOCK_SIZE</code></td><td>4,18,24</td><td>add_kernel</td><td><code>arith.index_cast</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:15:24</td><td><code>d96b635a3d86</code></td><td><code>10:     %block_start_1 = arith.index_cast %block_start_0 : i32 to index loc(#loc13)</code></td></tr><tr><td><code>16:     offsets = block_start + tl.arange(0, BLOCK_SIZE)</code></td><td>4,14,28,38,41</td><td>add_kernel</td><td><code>tt.make_range</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:16:41</td><td><code>70eb96ae2fd1</code></td><td><code>11:     %offsets = tt.make_range {end = 128 : i32, start = 0 : i32} : tensor&lt;128xi32&gt; loc(#loc20)</code></td></tr><tr><td><code>16:     offsets = block_start + tl.arange(0, BLOCK_SIZE)</code></td><td>4,14,28,38,41</td><td>add_kernel</td><td><code>tt.splat</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:16:28</td><td><code>eb6ec7f96142</code></td><td><code>12:     %offsets_0 = tt.splat %block_start : i32 -&gt; tensor&lt;128xi32&gt; loc(#loc21)</code></td></tr><tr><td><code>16:     offsets = block_start + tl.arange(0, BLOCK_SIZE)</code></td><td>4,14,28,38,41</td><td>add_kernel</td><td><code>arith.addi</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:16:28</td><td><code>8ecf8510f307</code></td><td><code>13:     %offsets_1 = arith.addi %offsets_0, %offsets : tensor&lt;128xi32&gt; loc(#loc21)</code></td></tr><tr><td><code>16:     offsets = block_start + tl.arange(0, BLOCK_SIZE)</code></td><td>4,14,28,38,41</td><td>add_kernel</td><td>-</td><td>kernel.ttadapter.mlir</td><td><span class="badge lost">LOST</span></td><td>-</td><td>-</td><td>line not present in this stage</td></tr><tr><td><code>18:     x = tl.load(x_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>tt.splat</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:18:24</td><td><code>f9efe74ef32b</code></td><td><code>14:     %x = tt.splat %x_ptr : !tt.ptr&lt;f32&gt; -&gt; tensor&lt;128x!tt.ptr&lt;f32&gt;&gt; loc(#loc22)</code></td></tr><tr><td><code>18:     x = tl.load(x_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>tt.addptr</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:18:24</td><td><code>ee3dd8a9908d</code></td><td><code>15:     %x_2 = tt.addptr %x, %offsets_1 : tensor&lt;128x!tt.ptr&lt;f32&gt;&gt;, tensor&lt;128xi32&gt; loc(#loc22)</code></td></tr><tr><td><code>18:     x = tl.load(x_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>tt.load</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:18:16</td><td><code>676005bfbee3</code></td><td><code>16:     %x_3 = tt.load %x_2 : tensor&lt;128x!tt.ptr&lt;f32&gt;&gt; loc(#loc23)</code></td></tr><tr><td><code>18:     x = tl.load(x_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>memref.reinterpret_cast</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:18:24</td><td><code>9d0bb5f1192c</code></td><td><code>11:     %x = memref.reinterpret_cast %x_ptr to offset: [%block_start_1], sizes: [128], strides: [1] : memref&lt;?xf32&gt; to memref&lt;128xf32, strided&lt;[1], offset: ?&gt;&gt; loc(#loc14)</code></td></tr><tr><td><code>18:     x = tl.load(x_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>memref.alloc</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:18:16</td><td><code>38919b2bad0d</code></td><td><code>12:     %x_2 = memref.alloc() : memref&lt;128xf32&gt; loc(#loc15)</code></td></tr><tr><td><code>18:     x = tl.load(x_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>memref.copy</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:18:16</td><td><code>29ffcc102940</code></td><td><code>13:     memref.copy %x, %x_2 : memref&lt;128xf32, strided&lt;[1], offset: ?&gt;&gt; to memref&lt;128xf32&gt; loc(#loc15)</code></td></tr><tr><td><code>18:     x = tl.load(x_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>bufferization.to_tensor</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:18:16</td><td><code>e6a240e3594b</code></td><td><code>14:     %x_3 = bufferization.to_tensor %x_2 restrict writable : memref&lt;128xf32&gt; to tensor&lt;128xf32&gt; loc(#loc15)</code></td></tr><tr><td><code>19:     y = tl.load(y_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>tt.splat</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:19:24</td><td><code>f9efe74ef32b</code></td><td><code>17:     %y = tt.splat %y_ptr : !tt.ptr&lt;f32&gt; -&gt; tensor&lt;128x!tt.ptr&lt;f32&gt;&gt; loc(#loc24)</code></td></tr><tr><td><code>19:     y = tl.load(y_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>tt.addptr</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:19:24</td><td><code>ee3dd8a9908d</code></td><td><code>18:     %y_4 = tt.addptr %y, %offsets_1 : tensor&lt;128x!tt.ptr&lt;f32&gt;&gt;, tensor&lt;128xi32&gt; loc(#loc24)</code></td></tr><tr><td><code>19:     y = tl.load(y_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>tt.load</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:19:16</td><td><code>676005bfbee3</code></td><td><code>19:     %y_5 = tt.load %y_4 : tensor&lt;128x!tt.ptr&lt;f32&gt;&gt; loc(#loc25)</code></td></tr><tr><td><code>19:     y = tl.load(y_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>memref.reinterpret_cast</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:19:24</td><td><code>9d0bb5f1192c</code></td><td><code>15:     %y = memref.reinterpret_cast %y_ptr to offset: [%block_start_1], sizes: [128], strides: [1] : memref&lt;?xf32&gt; to memref&lt;128xf32, strided&lt;[1], offset: ?&gt;&gt; loc(#loc16)</code></td></tr><tr><td><code>19:     y = tl.load(y_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>memref.alloc</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:19:16</td><td><code>38919b2bad0d</code></td><td><code>16:     %y_4 = memref.alloc() : memref&lt;128xf32&gt; loc(#loc17)</code></td></tr><tr><td><code>19:     y = tl.load(y_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>memref.copy</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:19:16</td><td><code>29ffcc102940</code></td><td><code>17:     memref.copy %y, %y_4 : memref&lt;128xf32, strided&lt;[1], offset: ?&gt;&gt; to memref&lt;128xf32&gt; loc(#loc17)</code></td></tr><tr><td><code>19:     y = tl.load(y_ptr + offsets)</code></td><td>4,8,16,24</td><td>add_kernel</td><td><code>bufferization.to_tensor</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:19:16</td><td><code>e6a240e3594b</code></td><td><code>18:     %y_5 = bufferization.to_tensor %y_4 restrict writable : memref&lt;128xf32&gt; to tensor&lt;128xf32&gt; loc(#loc17)</code></td></tr><tr><td><code>21:     output = x + y</code></td><td>4,13,17</td><td>add_kernel</td><td><code>arith.addf</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:21:17</td><td><code>b5769d2ea713</code></td><td><code>20:     %output = arith.addf %x_3, %y_5 : tensor&lt;128xf32&gt; loc(#loc26)</code></td></tr><tr><td><code>21:     output = x + y</code></td><td>4,13,17</td><td>add_kernel</td><td><code>arith.addf</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:21:17</td><td><code>b5769d2ea713</code></td><td><code>19:     %output = arith.addf %x_3, %y_5 : tensor&lt;128xf32&gt; loc(#loc18)</code></td></tr><tr><td><code>23:     tl.store(output_ptr + offsets, output)</code></td><td>4,13,26,35</td><td>add_kernel</td><td><code>tt.splat</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:23:26</td><td><code>f9efe74ef32b</code></td><td><code>21:     %0 = tt.splat %output_ptr : !tt.ptr&lt;f32&gt; -&gt; tensor&lt;128x!tt.ptr&lt;f32&gt;&gt; loc(#loc11)</code></td></tr><tr><td><code>23:     tl.store(output_ptr + offsets, output)</code></td><td>4,13,26,35</td><td>add_kernel</td><td><code>tt.addptr</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:23:26</td><td><code>ee3dd8a9908d</code></td><td><code>22:     %1 = tt.addptr %0, %offsets_1 : tensor&lt;128x!tt.ptr&lt;f32&gt;&gt;, tensor&lt;128xi32&gt; loc(#loc11)</code></td></tr><tr><td><code>23:     tl.store(output_ptr + offsets, output)</code></td><td>4,13,26,35</td><td>add_kernel</td><td><code>tt.store</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:23:35</td><td><code>6de996f10fb0</code></td><td><code>23:     tt.store %1, %output : tensor&lt;128x!tt.ptr&lt;f32&gt;&gt; loc(#loc12)</code></td></tr><tr><td><code>23:     tl.store(output_ptr + offsets, output)</code></td><td>4,13,26,35</td><td>add_kernel</td><td><code>tt.return</code></td><td>kernel.ttir.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:23:4</td><td><code>35188991fc9b</code></td><td><code>24:     tt.return loc(#loc13)</code></td></tr><tr><td><code>23:     tl.store(output_ptr + offsets, output)</code></td><td>4,13,26,35</td><td>add_kernel</td><td><code>memref.reinterpret_cast</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:23:26</td><td><code>9d0bb5f1192c</code></td><td><code>20:     %reinterpret_cast = memref.reinterpret_cast %output_ptr to offset: [%block_start_1], sizes: [128], strides: [1] : memref&lt;?xf32&gt; to memref&lt;128xf32, strided&lt;[1], offset: ?&gt;&gt; loc(#loc7)</code></td></tr><tr><td><code>23:     tl.store(output_ptr + offsets, output)</code></td><td>4,13,26,35</td><td>add_kernel</td><td><code>bufferization.materialize_in_destination</code></td><td>kernel.ttadapter.mlir</td><td><span class="badge ok">OK</span></td><td>test.py:23:35</td><td><code>fc3c40d6de5e</code></td><td><code>21:     bufferization.materialize_in_destination %output in writable %reinterpret_cast : (tensor&lt;128xf32&gt;, memref&lt;128xf32, strided&lt;[1], offset: ?&gt;&gt;) -&gt; () loc(#loc8)</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Lost Original Lines</h2>
+    <ul><li><strong>line 7</strong> [add_kernel]: <code>    x_ptr,</code> <span>lost at before kernel.ttir.mlir</span></li><li><strong>line 8</strong> [add_kernel]: <code>    y_ptr,</code> <span>lost at before kernel.ttir.mlir</span></li><li><strong>line 9</strong> [add_kernel]: <code>    output_ptr,</code> <span>lost at before kernel.ttir.mlir</span></li><li><strong>line 10</strong> [add_kernel]: <code>    n_elements,</code> <span>lost at before kernel.ttir.mlir</span></li><li><strong>line 11</strong> [add_kernel]: <code>    BLOCK_SIZE: tl.constexpr</code> <span>lost at before kernel.ttir.mlir</span></li><li><strong>line 12</strong> [add_kernel]: <code>):</code> <span>lost at before kernel.ttir.mlir</span></li><li><strong>line 13</strong> [add_kernel]: <code>    pid = tl.program_id(axis = 0)</code> <span>lost at kernel.ttir.mlir -&gt; kernel.ttadapter.mlir</span></li><li><strong>line 16</strong> [add_kernel]: <code>    offsets = block_start + tl.arange(0, BLOCK_SIZE)</code> <span>lost at kernel.ttir.mlir -&gt; kernel.ttadapter.mlir</span></li></ul>
+
+    <h2>Top Dangerous Pass Transitions</h2>
+    <ol><li><strong>kernel.ttir.mlir -&gt; kernel.ttadapter.mlir</strong>: lost lines 2, lost ops 4, degraded or unanchored ops 0, fingerprint matches 3. replacement/lowering likely failed to propagate original locs</li></ol>
+
+    <h2>Generated / Unanchored MLIR Ops</h2>
+    <ul><li><strong>kernel.ttir.mlir:8 arith.constant</strong>: generated or compiler-introduced op with unknown location<br><code>    %c128_i32 = arith.constant 128 : i32 loc(#loc1)</code></li></ul>
+
+    <h2>Fix Suggestions</h2>
+    <ul>
+      <li>In custom lowering/rewrite passes, create replacement ops with the source op location or an explicit FusedLoc that includes the original source FileLineColLoc.</li>
+      <li>For generated helper ops, use a NameLoc/FusedLoc rooted in the original op instead of loc(unknown).</li>
+      <li>Add pass-level assertions or tests that reject newly created operations with unknown locations after each major lowering boundary.</li>
+      <li>Keep explicit stage dumps in pass order; automatic pass attribution from filenames is approximate.</li>
+    </ul>
+  </main>
+</body>
+</html>
